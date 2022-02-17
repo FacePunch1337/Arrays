@@ -45,20 +45,28 @@ namespace Dictionary
 
                     if (keyPressed.KeyChar == '2')
                     {
-                        Console.Write("en: ");
-                        String enWord = Console.ReadLine();
-                        String ruWord = null;
+                        Console.Write("ru: ");
+                        String ruWord = Console.ReadLine();
+                        String enWord = null;
 
-                        try { ruWord = dict[enWord]; }
-                        catch { ruWord = "Not Found"; }
+                        try { enWord = dict[ruWord]; }
+                        catch { enWord = "Not Found"; }
 
-                        Console.WriteLine(dict[enWord]);
+                        Console.WriteLine(dict[ruWord]);
 
                     }
                     if (keyPressed.KeyChar == '3')
                     {
+                        Console.WriteLine("Введите en");
                         var en = Console.ReadLine();
+                     
+                        Console.WriteLine("Введите ru");
                         var ru = Console.ReadLine();
+                       
+                        if(en != "\0" || ru != "\0")
+                        {
+                            Console.WriteLine("Готово!");
+                        }
                         dict.Add(en, ru);
 
                     }
