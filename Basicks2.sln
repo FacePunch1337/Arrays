@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31911.196
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basicks2", "Basicks2\Basicks2.csproj", "{D50DD305-870C-4D22-B71A-BCDC7C3A7450}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basicks2", "Basicks2\Basicks2.csproj", "{D50DD305-870C-4D22-B71A-BCDC7C3A7450}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary", "Dictionary\Dictionary.csproj", "{73A66047-8246-43E5-A63D-B87D7557D87F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D50DD305-870C-4D22-B71A-BCDC7C3A7450}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D50DD305-870C-4D22-B71A-BCDC7C3A7450}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D50DD305-870C-4D22-B71A-BCDC7C3A7450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A66047-8246-43E5-A63D-B87D7557D87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A66047-8246-43E5-A63D-B87D7557D87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A66047-8246-43E5-A63D-B87D7557D87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A66047-8246-43E5-A63D-B87D7557D87F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

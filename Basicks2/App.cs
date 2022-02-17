@@ -33,17 +33,85 @@ namespace Basicks2
         public void CollectionsDemo()
         {
             List<String> strings;
-            Dictionary<String, String> dict;
+            Dictionary<int, String> dict;
 
-            strings = new List<string>();
+            #region List
+
+
+            strings = new List<String>();
             strings.Add("String 1");
             strings.Add("String 2");
             strings.Add("String 3");
+            strings.Add("String 4");
             foreach(String item in strings)
             {
                 Console.WriteLine(item);
             }
+            Console.WriteLine("---------------");
+            strings[1] += "+";
+            //Console.WriteLine(strings[1]);
             
+            foreach (String item in strings)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("---------------");
+
+            Console.WriteLine(strings.Contains("String " + (2+1)));
+            Console.WriteLine(strings.IndexOf("String 3"));
+            Console.WriteLine(strings.LastIndexOf("String 3"));
+
+            //strings.Clear();
+            foreach (String item in strings)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("---------------");
+
+            #endregion
+
+            #region Dictionary
+            dict = new Dictionary<int, string>();
+
+          
+            dict.Add(1, "раз");
+            dict.Add(2, "два");
+            dict.Add(3, "три");
+
+            
+            dict[4] = null;
+
+            for (int i = 1; i < 4; i++)
+            {
+                Console.WriteLine(dict[i]);
+            }
+
+            Console.WriteLine(dict[4] ?? "NULL");
+
+            Console.WriteLine("---------------");
+
+            foreach (var pair in dict)
+            {
+                Console.WriteLine("{0} - {1}", pair.Key, pair.Value);
+            }
+
+            Console.WriteLine(dict.ContainsKey(1));
+            Console.WriteLine(dict.ContainsValue("раз"));
+
+            foreach (int key in new int[] {5,6,7})
+            {
+                dict.Add(key, "digit");
+            }
+            
+
+
+
+
+
+
+            #endregion
+
         }
         public void ArraysDemo()
         {
