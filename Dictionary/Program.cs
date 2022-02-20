@@ -9,70 +9,78 @@ namespace Dictionary
 {
     internal class Program
     {
-        private static Dictionary<String, String>dict;
-      
- 
+        private static Dictionary<String, String> dict;
+        private static Dictionary<String, String>.KeyCollection dictKeys;
+        private static String engWord;
+        private static String ruWord;
+
+
+
         static void Main(string[] args)
         {
             while (true)
             {
-                dict = new Dictionary<String, String>();
-                dict.Add("hello", "привет");
-                dict.Add("bye", "пока");
-                dict.Add("hi", "добрый день");
+               dict = new Dictionary<String, String>();
+
+                Dictionary<String, String>.KeyCollection dictKeys = dict.Keys;
 
                 Console.WriteLine("Словарь");
-                Console.WriteLine("1] Найти перевод [en]");
-                Console.WriteLine("2] Найти перевод [ru]");
-                Console.WriteLine("3] Добавить перевод");
-                Console.WriteLine("4] ");
-
+                Console.WriteLine("1] Добавить перевод");
+                Console.WriteLine("2] Найти перевод");
+                Console.WriteLine("3] Посмотреть словарь");
+                
+                
                 var keyPressed = Console.ReadKey(true);
+                //dict.Add("hello", "привет");
                 while (keyPressed.KeyChar != '0')
                 {
                     if (keyPressed.KeyChar == '1')
                     {
-                        Console.Write("en: ");
-                        String enWord = Console.ReadLine();
-                        String ruWord = null;
+                        Console.WriteLine("Введите eng");
+                        var eng = Console.ReadLine();
 
-                        try { ruWord = dict[enWord]; }
-                        catch { ruWord = "Not Found"; }
+                        Console.WriteLine("Введите ru");
+                        var ru = Console.ReadLine();
 
-                        Console.WriteLine(dict[enWord]);
+                        if (eng != "\0" || ru != "\0")
+                        {
+                            Console.WriteLine("Готово!");
+                        }
+                        dict.Add(eng, ru);
 
                     }
 
                     if (keyPressed.KeyChar == '2')
                     {
-                        Console.Write("ru: ");
-                        String ruWord = Console.ReadLine();
-                        String enWord = null;
+                        Console.Write("en: ");
+                         engWord = Console.ReadLine();
+                         ruWord = null;
 
-                        try { enWord = dict[ruWord]; }
-                        catch { enWord = "Not Found"; }
+                        try { ruWord = dict[engWord]; }
+                        catch { ruWord = "Not Found"; }
 
-                        Console.WriteLine(dict[ruWord]);
+                        
+                        Console.WriteLine($"ru: {dict[engWord]}");
 
                     }
+
                     if (keyPressed.KeyChar == '3')
                     {
-                        Console.WriteLine("Введите en");
-                        var en = Console.ReadLine();
-                     
-                        Console.WriteLine("Введите ru");
-                        var ru = Console.ReadLine();
-                       
-                        if(en != "\0" || ru != "\0")
+
+                        foreach (var item in dict)
                         {
-                            Console.WriteLine("Готово!");
+
+                            Console.WriteLine($"{item.Key} - {item.Value}");
                         }
-                        dict.Add(en, ru);
+                        
+
+                        Console.WriteLine();
+
 
                     }
+                    
 
-
-
+               
                     keyPressed = Console.ReadKey(true);
                 }
             }
